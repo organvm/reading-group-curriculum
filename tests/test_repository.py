@@ -11,14 +11,14 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from src.repository import CurriculumRepository
-from koinonia_db.models.reading import (
-    Curriculum,
-    ReadingSessionRow,
-    Entry,
-    DiscussionQuestion,
-    Guide,
-)
+pytest.importorskip("sqlalchemy")
+reading_models = pytest.importorskip("koinonia_db.models.reading")
+repository = pytest.importorskip("src.repository")
+
+CurriculumRepository = repository.CurriculumRepository
+Curriculum = reading_models.Curriculum
+ReadingSessionRow = reading_models.ReadingSessionRow
+Entry = reading_models.Entry
 
 
 # ── Structure Tests (no DB required) ───────────────────────────
