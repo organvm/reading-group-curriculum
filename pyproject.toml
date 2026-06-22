@@ -9,6 +9,7 @@ description = "Reading group curriculum management with reading lists, discussio
 requires-python = ">=3.11"
 dependencies = [
     "koinonia-db",
+    "sqlalchemy>=2.0",
     "click>=8.0",
 ]
 
